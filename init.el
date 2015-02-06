@@ -150,3 +150,56 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(custom-enabled-themes (quote (tsdh-dark)))
+ '(ede-project-directories (quote ("c:/_LIU/WORK/20141212_INC-TP_QNX" "c:/_LIU/WORK/FPGA_Enhanced_Telemetry_20141218/temp_Enhanced_Telemetry_FPGA_ADC_DAC_Rev_D/upmodem_txrx_ch2/hdl" "c:/_LIU/WORK/FPGA_Enhanced_Telemetry_20141218/temp_Enhanced_Telemetry_FPGA_ADC_DAC_Rev_D/upmodem_txrx_ch1" "c:/_LIU/WORK/FPGA_Enhanced_Telemetry_20141218/temp_Enhanced_Telemetry_FPGA_ADC_DAC_Rev_D/upmodem_txrx_ch1/hdl")))
+ '(global-hl-line-mode t)
+ '(global-semantic-idle-summary-mode nil)
+ '(projectile-global-mode t)
+ '(send-mail-function (quote mailclient-send-it))
+ '(user-full-name "Zhengjie (Jack) Liu")
+ '(vhdl-basic-offset 3)
+ '(vhdl-company-name "Halliburton Energy Services")
+ '(vhdl-indent-tabs-mode t)
+ '(vhdl-project "upmodem_txrx_ch1_vhdl_project")
+ '(vhdl-project-alist (quote (("upmodem_txrx_ch1_vhdl_project" "Enhanced Telemetry FPGA" "C:\\_LIU\\WORK\\FPGA_Enhanced_Telemetry_20141218\\temp_Enhanced_Telemetry_FPGA_ADC_DAC_Rev_D\\upmodem_txrx_ch1/" ("./hdl/" "./constraint/") "" (("ModelSim" "-87 \\2" "-f \\1 top_level" nil) ("Synopsys" "-vhdl87 \\2" "-f \\1 top_level" ((".*/datapath/.*" . "-optimize \\3") (".*_tb\\.vhd")))) "lib/" "example3_lib" "lib/example3/" "Makefile_\\2" "") ("Example 2" "Individual source files, multiple compilers in different directories" "$EXAMPLE2/" ("vhdl/system.vhd" "vhdl/component_*.vhd") "" nil "\\1/" "work" "\\1/work/" "Makefile" "") ("Example 3" "Source files in a directory tree, multiple compilers in same directory" "/home/me/example3/" ("-r ./*/vhdl/") "/CVS/" nil "./" "work" "work-\\1/" "Makefile-\\1" "-------------------------------------------------------------------------------
+-- This is a multi-line project description
+-- that can be used as a project dependent part of the file header.
+")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Inconsolata" :foundry "outline" :slant normal :weight normal :height 128 :width normal)))))
+ 
+;; default location
+(setq default-directory "C:/_LIU/WORK/")
+ 
+;; package sr-speedbar
+(require 'sr-speedbar)
+
+;; change c-z to UNDO
+	;; Unbind Pesky Sleep Button
+	(global-unset-key [(control z)])
+	(global-unset-key [(control x)(control z)])
+	;; Windows Style Undo
+    (global-set-key [(control z)] 'undo)
+
+;; enable line number mod
+(global-linum-mode 1)
+;; enable highlight current line mode
+(hl-line-mode 1)
+
+; nyan mode directory
+(add-to-list 'load-path "~/.emacs.d/nyan-mode-master")
+
+;; load the packaged named nyan-mode.
+;; best not to include the ending “.el” or “.elc”
+(load "nyan-mode") 
+(nyan-mode 1)
